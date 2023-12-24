@@ -1,0 +1,113 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1703355711473' stop='1703355725369'>
+    <name>SnapTrude:</name>
+    <title>SnapTrude:</title>
+    <test-cases>
+        <test-case start='1703355711973' status='failed' stop='1703355722285'>
+            <name>Login</name>
+            <title>Login</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='codeceptjs'/>
+            </labels>
+            <parameters/>
+            <steps>
+                <step start='1703355711990' status='failed' stop='1703355722285'>
+                    <name>I: login </name>
+                    <title>I: login </title>
+                    <attachments/>
+                    <steps>
+                        <step start='1703355711990' status='passed' stop='1703355720140'>
+                            <name>I am on page "/login"</name>
+                            <title>I am on page "/login"</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                        <step start='1703355720141' status='passed' stop='1703355720785'>
+                            <name>I fill field "div#root div:nth-child(1) > input", "chetan.g.shavanti@gmail.com"</name>
+                            <title>I fill field "div#root div:nth-child(1) > input", "chetan.g.shavanti@gmail.com"</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                        <step start='1703355720785' status='passed' stop='1703355721134'>
+                            <name>I fill field "div#root div:nth-child(2) > input", "Test@123"</name>
+                            <title>I fill field "div#root div:nth-child(2) > input", "Test@123"</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                        <step start='1703355721135' status='failed' stop='1703355722285'>
+                            <name>I click "Login"</name>
+                            <title>I click "Login"</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+            </steps>
+            <attachments>
+                <attachment title='Last Seen Screenshot' source='8f362647-28d0-4db8-9b54-eb3cf214bfcd-attachment.png' type='image/png' size='60604'/>
+            </attachments>
+            <failure>
+                <message>Clickable element "Login" was not found by text|CSS|XPath</message>
+                <stack-trace>Error: Clickable element "Login" was not found by text|CSS|XPath
+                    at new ElementNotFound (D:\snaptrude\node_modules\codeceptjs\lib\helper\errors\ElementNotFound.js:14:11)
+                    at assertElementExists (D:\snaptrude\node_modules\codeceptjs\lib\helper\Puppeteer.js:2556:11)
+                    at Puppeteer.proceedClick (D:\snaptrude\node_modules\codeceptjs\lib\helper\Puppeteer.js:2314:5)
+                    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1703355722444' status='failed' stop='1703355723541'>
+            <name>Project Selection</name>
+            <title>Project Selection</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='codeceptjs'/>
+            </labels>
+            <parameters/>
+            <steps>
+                <step start='1703355722446' status='failed' stop='1703355723541'>
+                    <name>I see "test"</name>
+                    <title>I see "test"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments>
+                <attachment title='Last Seen Screenshot' source='20ddc8c6-af15-458c-afab-25c5fbfa92aa-attachment.png' type='image/png' size='60604'/>
+            </attachments>
+            <failure>
+                <message></message>
+                <stack-trace>undefined</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1703355723624' status='failed' stop='1703355725366'>
+            <name>Draw Rectangle</name>
+            <title>Draw Rectangle</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='codeceptjs'/>
+            </labels>
+            <parameters/>
+            <steps>
+                <step start='1703355723627' status='failed' stop='1703355725365'>
+                    <name>I am on page "/AQLDVX"</name>
+                    <title>I am on page "/AQLDVX"</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>Navigating frame was detached</message>
+                <stack-trace>Error: Navigating frame was detached
+                    at #onFrameDetached (D:\snaptrude\node_modules\puppeteer-core\lib\cjs\puppeteer\cdp\LifecycleWatcher.js:109:47)
+                    at D:\snaptrude\node_modules\puppeteer-core\lib\cjs\third_party\mitt\mitt.js:1:732
+                    at Array.map (&lt;anonymous>)
+                    at Object.emit (D:\snaptrude\node_modules\puppeteer-core\lib\cjs\third_party\mitt\mitt.js:1:716)
+                    at CdpFrame.emit (D:\snaptrude\node_modules\puppeteer-core\lib\cjs\puppeteer\common\EventEmitter.js:91:23)
+                    at #removeFramesRecursively (D:\snaptrude\node_modules\puppeteer-core\lib\cjs\puppeteer\cdp\FrameManager.js:454:15)
+                    at #onClientDisconnect (D:\snaptrude\node_modules\puppeteer-core\lib\cjs\puppeteer\cdp\FrameManager.js:102:42)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
