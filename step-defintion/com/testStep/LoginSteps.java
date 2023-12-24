@@ -1,5 +1,8 @@
 package com.testStep;
 
+import java.awt.MouseInfo;
+import java.awt.PointerInfo;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -22,19 +25,29 @@ public class LoginSteps {
     public void openSnapTrude() throws InterruptedException {
         driver.get("https://app.snaptrude.com/login");
         Thread.sleep(8000);
+
     }
 
-    public void enterUsername(String username) {
+    public void enterUsername(String username) throws InterruptedException {
         driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/form[1]/div[1]/input[1]")).sendKeys(username);
+        Thread.sleep(5000);
     }
 
-    public void enterPassword(String password) {
+    public void enterPassword(String password) throws InterruptedException {
         driver.findElement(By.xpath("//input[@type='password']")).sendKeys(password);
+        Thread.sleep(5000);
+    	driver.findElement(By.xpath( "//button[@type='submit']"	 )).click();
+
+
     }
 
-    public void clickSignInButton() {
-        driver.findElement(By.xpath("//button[@type='submit']")).click();
-    }
+//    public void clickSignInButton() throws InterruptedException{
+//    	
+//    	driver.findElement(By.xpath( "//button[@type='submit']"	 )).click();
+//
+//        Thread.sleep(5000);
+//
+//    }
 
     public void verifyUserIDNotFoundErrorMessage() throws InterruptedException {
     	Thread.sleep(8000);
@@ -42,6 +55,8 @@ public class LoginSteps {
         System.out.println(wrongID);
         if (wrongID) {
             System.out.println("Wrong User ID Testcase Passed ");
+        	Thread.sleep(8000);
+
         }
     }
     
@@ -51,6 +66,8 @@ public class LoginSteps {
         System.out.println(wrongPass);
         if (wrongPass) {
             System.out.println("Test case Passed ");
+        	Thread.sleep(8000);
+
         }
     }
     
@@ -61,6 +78,8 @@ public class LoginSteps {
     	if (isMyWorkspaceVisible) {
 
     	    System.out.println("  Scenario passed: Login successful.  ");
+        	Thread.sleep(8000);
+
     	} else {
     	    System.out.println("[ Scenario failed: My Workspace is not visible on the display.   ");	 
         }
@@ -110,7 +129,12 @@ public class LoginSteps {
     	Thread.sleep(2000);
     	canvas.sendKeys(Keys.ESCAPE);
     	
-    	
+    	driver.findElement(By.xpath( "//*[@data-tooltip-id=\"2d-3d-view-toogle\"]"	 )).click();
+
+    	Thread.sleep(5000);
+
+    	driver.findElement(By.xpath( "//*[@data-tooltip-id=\"2d-3d-view-toogle\"]"	 )).click();
+    	 
  
     }
     
@@ -135,6 +159,14 @@ public class LoginSteps {
 
     	
     	
+   
+    
+    
+    
+    
+    
+    
+    
  
     public void drawCircle() throws InterruptedException {
     	
@@ -162,7 +194,12 @@ actions.moveByOffset(60, 0).click().perform();
 Thread.sleep(5000);
  
 
-    	
+driver.findElement(By.xpath( "//*[@data-tooltip-id=\"2d-3d-view-toogle\"]"	 )).click();
+
+Thread.sleep(5000);
+
+driver.findElement(By.xpath( "//*[@data-tooltip-id=\"2d-3d-view-toogle\"]"	 )).click();
+ 
  
     }
     
@@ -195,6 +232,58 @@ Thread.sleep(5000);
     
     
     
+
+    
+    public void drawHexagon() throws InterruptedException {
+    	
+    	
+    	
+    	Actions actions = new Actions(driver);
+
+Thread.sleep(5000);
+actions.keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).perform();
+actions.sendKeys(Keys.DELETE).perform();
+driver.findElement(By.xpath( "//*[@data-tooltip-id=\"draw\"]"	 )).click();
+actions.moveByOffset(0, 0).click().perform();
+actions.moveByOffset(60, 0).click().perform();
+Thread.sleep(500);
+actions.moveByOffset(30, 52).click().perform();
+Thread.sleep(500);
+actions.moveByOffset(-30, 52).click().perform();
+Thread.sleep(500);
+actions.moveByOffset(-60, 0).click().perform();
+Thread.sleep(500);
+actions.moveByOffset(-30, -52).click().perform();
+Thread.sleep(500);
+actions.moveByOffset(0, 0).click().perform();
+Thread.sleep(500);
+PointerInfo pointerInfo = MouseInfo.getPointerInfo();
+java.awt.Point finalPosition = pointerInfo.getLocation();
+double tolerance = 1.0; 
+
+driver.findElement(By.xpath( "//*[@data-tooltip-id=\"2d-3d-view-toogle\"]"	 )).click();
+
+Thread.sleep(5000);
+
+driver.findElement(By.xpath( "//*[@data-tooltip-id=\"2d-3d-view-toogle\"]"	 )).click();
+ 
+    }
+    
+    public void verifyHexagon() throws InterruptedException {
+    	
+    	WebElement canvasafterHexagon = driver.findElement(By.id("canvas-wrapper"));
+    	Thread.sleep(2000);
+    	Thread.sleep(500);
+    	String afterHexagon = canvasafterHexagon.getAttribute("style");
+    	if (before.equals(afterHexagon)) {
+    		System.out.println("Scenario Failed :  Unable to draw Hexagon ");
+    	}
+    	else {
+
+    		System.out.println("Scenario passed : Hexagon successfully drawn. ");
+    	}
+    }
+    	
     
     
     
@@ -206,6 +295,179 @@ Thread.sleep(5000);
     
     
     
+
+    
+    public void drawWalls() throws InterruptedException {
+    	
+    	
+    	
+    	Actions actions = new Actions(driver);
+
+actions.keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).perform();
+actions.sendKeys(Keys.DELETE).perform();
+
+
+driver.findElement(By.xpath( "//*[contains(text(),'Wall')]" )).click();
+
+
+
+Thread.sleep(1000);
+
+//driver.findElement(By.xpath( ""	 )).get(0).click();
+actions.moveByOffset(150, 0).click().perform();
+Thread.sleep(1000);
+actions.moveByOffset(0, 250).click().perform();
+Thread.sleep(1000);
+actions.moveByOffset(-150, 0).click().perform();
+Thread.sleep(1000);
+actions.moveByOffset(0, -250).click().perform();
+Thread.sleep(2000);
+actions.moveByOffset(0, 0).click().perform();
+driver.findElement(By.xpath( "//*[@data-tooltip-id=\"2d-3d-view-toogle\"]"	 )).click();
+Thread.sleep(5000);
+
+ 
+    }
+    
+    public void verifyWalls() throws InterruptedException {
+    	
+    	WebElement canvasafterWalls = driver.findElement(By.id("canvas-wrapper"));
+    	Thread.sleep(2000);
+    	Thread.sleep(500);
+    	String afterWalls = canvasafterWalls.getAttribute("style");
+    	if (before.equals(afterWalls)) {
+    		System.out.println("Scenario Failed :  Unable to draw Walls ");
+    	}
+    	else {
+
+    		System.out.println("Scenario passed : Walls successfully drawn. ");
+    	}
+    }
+    	
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    public void drawFloor() throws InterruptedException {
+    	
+    	
+    	
+    	Actions actions = new Actions(driver);
+
+Thread.sleep(1000);
+
+
+driver.findElement(By.xpath( "//*[@data-tooltip-id=\"2d-3d-view-toogle\"]"	 )).click();
+Thread.sleep(5000);
+driver.findElement(By.xpath( "//*[contains(text(),'Floor')]" )).click();
+
+actions.moveByOffset(150, 0).click().perform();
+Thread.sleep(1000);
+actions.moveByOffset(0, 250).click().perform();
+Thread.sleep(1000);
+actions.moveByOffset(-150, 0).click().perform();
+Thread.sleep(1000);
+actions.moveByOffset(0, -250).click().perform();
+actions.moveByOffset(0, 0).click().perform();
+
+Thread.sleep(2000);
+
+driver.findElement(By.xpath( "//*[@data-tooltip-id=\"2d-3d-view-toogle\"]"	 )).click();
+Thread.sleep(5000);
+
+    }
+    
+    public void verifyFloor() throws InterruptedException {
+    	
+    	WebElement canvasafterFloor = driver.findElement(By.id("canvas-wrapper"));
+    	Thread.sleep(2000);
+    	Thread.sleep(500);
+    	String afterFloor = canvasafterFloor.getAttribute("style");
+    	if (before.equals(afterFloor)) {
+    		System.out.println("Scenario Failed :  Unable to draw Floor ");
+    	}
+    	else {
+
+    		System.out.println("Scenario passed : Floor successfully drawn. ");
+    	}
+    }
+    	
+    
+    
+    
+    
+
+    
+    public void drawSlab() throws InterruptedException {
+    	
+    	
+    	
+    	Actions actions = new Actions(driver);
+
+Thread.sleep(1000);
+
+
+driver.findElement(By.xpath( "//*[@data-tooltip-id=\"2d-3d-view-toogle\"]"	 )).click();
+Thread.sleep(5000);
+driver.findElement(By.xpath( "//*[contains(text(),'Slab')]" )).click();
+
+actions.moveByOffset(150, 0).click().perform();
+Thread.sleep(1000);
+actions.moveByOffset(0, 250).click().perform();
+Thread.sleep(1000);
+actions.moveByOffset(-150, 0).click().perform();
+Thread.sleep(1000);
+actions.moveByOffset(0, -250).click().perform();
+actions.moveByOffset(0, 0).click().perform();
+
+Thread.sleep(2000);
+
+driver.findElement(By.xpath( "//*[@data-tooltip-id=\"2d-3d-view-toogle\"]"	 )).click();
+Thread.sleep(5000);
+
+    }
+    
+    public void verifySlab() throws InterruptedException {
+    	
+    	WebElement canvasafterSlab = driver.findElement(By.id("canvas-wrapper"));
+    	Thread.sleep(2000);
+    	Thread.sleep(500);
+    	String afterSlab = canvasafterSlab.getAttribute("style");
+    	if (before.equals(afterSlab)) {
+    		System.out.println("Scenario Failed :  Unable to draw Slab ");
+    	}
+    	else {
+
+    		System.out.println("Scenario passed : Slab successfully drawn. ");
+    	}
+    }
+    	
     
     
     

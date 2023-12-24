@@ -77,7 +77,52 @@ Feature: Title of your feature
     Then user verifies circle is visible
     
     
+                @Testcase7
+  Scenario: Draw Hexagon.
+    Given user is on Snaptrude login page
+    When user enters user name as "chetan.g.shavanti@gmail.com"
+    And user enters password as "Test@123"
+    And user clicks on Sign in button
+    And user clicks on Test Project
+    When user draw a Hexagon
+    Then user verifies Hexagon is visible
     
+    
+                   @Testcase8
+  Scenario: Draw Walls.
+    Given user is on Snaptrude login page
+    When user enters user name as "chetan.g.shavanti@gmail.com"
+    And user enters password as "Test@123"
+    And user clicks on Sign in button
+    And user clicks on Test Project
+    When user draw a Walls
+    Then user verifies Walls are visible
+    
+    
+ 
+                       @Testcase9
+  Scenario: Draw Floor.
+    Given user is on Snaptrude login page
+    When user enters user name as "chetan.g.shavanti@gmail.com"
+    And user enters password as "Test@123"
+    And user clicks on Sign in button
+    And user clicks on Test Project
+    When user draw a Floor
+    Then user verifies Floor is visible
+    
+    
+    
+    
+     
+                       @Testcase10
+  Scenario: Draw Slab.
+    Given user is on Snaptrude login page
+    When user enters user name as "chetan.g.shavanti@gmail.com"
+    And user enters password as "Test@123"
+    And user clicks on Sign in button
+    And user clicks on Test Project
+    When user draw a Slab
+    Then user verifies Slab is visible
     
     
     
