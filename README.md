@@ -1,0 +1,66 @@
+# Test Documentation - SnapTrude Automation
+
+## Introduction
+This document provides test documentation for the SnapTrude automation script. The script is designed to test various scenarios related to user login, project selection, and drawing shapes on the SnapTrude application.
+
+## Test Scenarios
+
+### Scenario 1: User Login
+
+#### Scenario 1.1: Wrong Email/Password
+1. Input a wrong email and password.
+2. Click on the login button.
+3. Verify if the error message is displayed.
+4. If the error message is displayed, the test is considered passed.
+
+#### Scenario 1.2: Correct Email/Password
+1. Input correct email and password.
+2. Click on the login button.
+3. Verify if the My Workspace is visible.
+4. If My Workspace is visible, the test is considered passed.
+
+### Scenario 2: Project Selection
+1. Select a project.
+2. Verify if the project is successfully opened.
+3. If the project is opened, the test is considered passed.
+
+### Scenario 3: Draw Rectangle
+1. Clear the canvas.
+2. Draw a rectangle on the canvas.
+3. Verify if the rectangle is successfully drawn.
+4. If the rectangle is drawn, the test is considered passed.
+
+### Scenario 4: Draw Circle
+1. Clear the canvas.
+2. Draw a circle on the canvas.
+3. Verify if the circle is successfully drawn.
+4. If the circle is drawn, the test is considered passed.
+
+### Scenario 5: Draw Hexagon
+1. Clear the canvas.
+2. Draw a hexagon on the canvas.
+3. Verify if the hexagon is successfully drawn.
+4. If the hexagon is drawn, the test is considered passed.
+
+### Scenario 6: Convert to 3D View
+1. Switch to the 3D view.
+2. Verify if the 3D view is successfully activated.
+3. If the 3D view is activated, the test is considered passed.
+
+### Scenario 7: Draw Walls
+1. Draw walls on the canvas.
+2. Verify if the walls are successfully drawn.
+3. If the walls are drawn, the test is considered passed.
+
+### Scenario 8: Draw Floor
+1. Draw a floor on the canvas.
+2. Verify if the floor is successfully drawn.
+3. If the floor is drawn, the test is considered passed.
+
+### Scenario 9: Draw Slab
+1. Draw a slab on the canvas.
+2. Verify if the slab is successfully drawn.
+3. If the slab is drawn, the test is considered passed.
+
+## Conclusion
+The SnapTrude automation script covers various scenarios related to user interactions with the application. Each scenario includes specific steps and expected outcomes to ensure the proper functioning of the application features.
