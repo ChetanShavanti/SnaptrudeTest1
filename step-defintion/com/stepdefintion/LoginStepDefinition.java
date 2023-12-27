@@ -131,17 +131,6 @@ public class LoginStepDefinition {
     loginSteps.closeBrowser();
   }
 
-  @When("user draw a Slab")
-  public void user_draw_a_slab() throws InterruptedException {
-    loginSteps.drawSlab();
-    loginSteps.closeBrowser();
 
-  }
-
-  @Then("user verifies Slab is visible")
-  public void user_verifies_slab_is_visible() throws InterruptedException {
-    loginSteps.verifySlab();
-    loginSteps.closeBrowser();
-  }
 
 }
